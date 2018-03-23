@@ -34,6 +34,9 @@ public class TCustomer implements Serializable {
 	@OneToMany(mappedBy="TCustomer")
 	private List<TOrder> TOrders;
 
+	@Transient
+	private String fullName;
+	
 	public TCustomer() {
 	}
 
@@ -92,4 +95,7 @@ public class TCustomer implements Serializable {
 		return TOrder;
 	}
 
+	public String getFullName() {
+		return this.firstName + " "+ this.lastName;
+	}
 }
