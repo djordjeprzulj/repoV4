@@ -2,6 +2,9 @@ package com.example.v4bootjpa.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -65,7 +68,8 @@ public class TCustomer implements Serializable {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
+	
+	@JsonIgnore
 	public List<TOrder> getTOrders() {
 		return this.TOrders;
 	}
